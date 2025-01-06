@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}API Documentation - PySpamDetector{% endblock %}
+
+{% block content %}
+<h1>API Documentation</h1>
+<p>Welcome to the API documentation for the <strong>PySpamDetector</strong> package.</p>
+<p>This package allows you to classify text as spam or not spam and provides a description of the text content. Below are the available endpoints and usage instructions:</p>
+
+<h2>Endpoints</h2>
+<ul>
+    <li><strong>POST /read_text</strong>: Classify text as Spam or Not Spam.</li>
+    <li><strong>POST /describe_text</strong>: Get a description of the text.</li>
+</ul>
+
+<h2>Usage</h2>
+<p>To use the PySpamDetector package, first install it using pip:</p>
+<pre><code>pip install pyspamdetector</code></pre>
+<p>Once installed, you can use the package in your Python scripts as follows:</p>
+<pre><code>
+from pyspamdetector import PySpamDetector
+
+detector = PySpamDetector()
+
+# Classify text
+result = detector.read_text("Your text here")
+print("Is spam:", result)
+
+# Describe text
+description = detector.describe_text("Your text here")
+print("Description:", description)
+</code></pre>
+
+<h2>Links</h2>
+<ul>
+    <li><a href="https://github.com/Psunday2000/pyspamdetector" rel="noopener noreferrer" target="_blank">GitHub Repository</a></li>
+    <li><a href="https://pypi.org/project/pyspamdetector/" rel="noopener noreferrer" target="_blank">PyPI Package</a></li>
+</ul>
+{% endblock %}

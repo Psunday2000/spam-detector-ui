@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Describe Text{% endblock %}
+
+{% block content %}
+<h1>Describe Text</h1>
+<form method="POST">
+    <div class="mb-3">
+        <textarea class="form-control" name="text" rows="5" placeholder="Enter text to describe..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Describe</button>
+</form>
+{% if description is not none %}
+    <h4>Description:</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in description.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+{% endblock %}

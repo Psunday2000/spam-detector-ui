@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Classify Text{% endblock %}
+
+{% block content %}
+<h1>Classify Text</h1>
+<form method="POST">
+    <div class="mb-3">
+        <textarea class="form-control" name="text" rows="5" placeholder="Enter text to classify..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Classify</button>
+</form>
+{% if result is not none %}
+    <div class="alert alert-info mt-3" role="alert">
+        <strong>Result:</strong> {{ result }}
+    </div>
+{% endif %}
+<a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+{% endblock %}
